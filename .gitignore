@@ -1,0 +1,71 @@
+
+### SPRING ###
+**/HELP.md
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+spring/.apt_generated
+spring/.classpath
+spring/.factorypath
+spring/.project
+spring/.settings
+spring/.springBeans
+spring/.sts4-cache
+
+### IntelliJ IDEA ###
+spring/.idea
+spring/*.iws
+spring/*.iml
+spring/*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+**/.vscode/
+!**/.vscode/settings.json
+!**/.vscode/tasks.json
+!**/.vscode/launch.json
+!**/.vscode/extensions.json
+**/.history/*
+
+### ANGULAR ###
+# compiled output
+angular/dist
+angular/tmp
+angular/out-tsc
+
+# dependencies
+angular/node_modules
+
+# profiling files
+angular/chrome-profiler-events*.json
+
+# IDEs and editors
+angular//.idea
+angular/.project
+angular/.classpath
+angular/.c9/
+angular/*.launch
+angular/.settings/
+angular/*.sublime-workspace
+
+# misc
+angular/.sass-cache
+angular/connect.lock
+angular/coverage
+angular/libpeerconnection.log
+angular/npm-debug.log
+angular/yarn-error.log
+angular/testem.log
+angular/typings
