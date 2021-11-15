@@ -35,13 +35,13 @@ public class UserController {
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    @PutMapping("/employees/{id}")
-    public User updateUser(@RequestBody User newEmployee, @PathVariable Long id) {
+    @PutMapping("/user/{id}")
+    public User updateUser(@RequestBody User newUser, @PathVariable Long id) {
         return repo.findById(id)
-                .map(employee -> {
-                    employee.setUsername(newEmployee.getUsername());
-                    employee.setEmail(newEmployee.getEmail());
-                    return repo.save(employee);
+                .map(user -> {
+                    user.setUsername(newUser.getUsername());
+                    user.setEmail(newUser.getEmail());
+                    return repo.save(user);
                 })
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
