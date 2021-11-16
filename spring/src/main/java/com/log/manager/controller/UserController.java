@@ -6,6 +6,9 @@ import com.log.manager.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,8 +50,13 @@ public class UserController {
     }
 
     @DeleteMapping("/user/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        repo.deleteById(id);
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        try{
+            repo.deleteById(id);
+            return new ResponseEntity<>("User with id=" + id + " deleted successfully.", HttpStatus.OK);
+        }catch (EmptyResultDataAccessException e) {
+            return new ResponseEntity<>("User with id=" + id + " not found.", HttpStatus.NOT_FOUND);
+        }
     }
 
 
