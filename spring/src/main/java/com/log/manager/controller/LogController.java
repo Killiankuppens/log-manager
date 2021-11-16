@@ -49,7 +49,7 @@ public class LogController {
                 .orElseThrow(() -> new LogNotFoundException(id));
     }
 
-    @DeleteMapping("/Log/{id}")
+    @DeleteMapping("/log/{id}")
     public void deleteLog(@PathVariable Long id) {
         repo.deleteById(id);
     }
